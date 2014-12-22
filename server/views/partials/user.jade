@@ -1,0 +1,27 @@
+div
+    .jumbotron.col-xs-6.pull-left.text-center
+        p {{ error || &quot; &quot; }}
+        h2.text-primary {{user.login}}
+        h2 {{user.name}}
+        h2.text-muted {{user.location}}
+    table.col-xs-12.text-center
+        thead
+            tr
+                th.text-center.col-xs-4 Name
+                th.text-center.col-xs-4 Stars
+                th.text-center.col-xs-4 Language
+        tbody
+            // USING AN ORDERBY FILTER ON NG-REPEAT
+            tr(ng-repeat='repo in repos | orderBy:repoSortOrder')
+                td {{repo.name}}
+                td {{repo.stargazers_count | number}}
+                td {{repo.language | uppercase}}
+    .col-xs-12.text-center
+        Order: select#repoSort(ng-model='repoSortOrder')
+            option(value='+name') Name Ascending
+            option(value='-name') Name Descending
+            option(value='+stargazers_count') Stars Ascending
+            option(value='-stargazers_count') Stars Descending
+            option(value='+language') Language Ascending
+            option(value='-language') Language Descending
+    a(href='#/main') Back to Search
