@@ -1,0 +1,24 @@
+{
+  "name": "D3-Metro-Redux",
+  "version": "0.0.0",
+  "authors": [
+    "Greg Harrison <gharrison@longviewinc.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angular": "~1.3.8",
+    "angular-resource": "~1.3.8",
+    "angular-route": "~1.3.8",
+    "d3": "~3.5.2"
+  }
+}
