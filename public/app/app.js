@@ -7,15 +7,14 @@
             requireBase: false
         });
         $routeProvider
-            .when("/main", {
+            .when("/", {
                 templateUrl: "/partials/main",
                 controller: "MainController"
             })
-            .when("/user/:username", {
-                templateUrl: "/partials/user",
+            .when("/githubUser/:username", {
+                templateUrl: "/partials/githubUser",
                 controller: "UserController"
-            })
-            .otherwise("/");
+            });
     });
 }());
 
