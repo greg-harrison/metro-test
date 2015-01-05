@@ -1,14 +1,14 @@
+div.jumbotron
+    h1 {{ title }}
 div
     .col-xs-12
-        .col-xs-1 {{ countdown }}
-        .col-xs-11
-            form(name="searchUser", ng-submit="search(username)")
-                input(type="search", required='', ng-model="username")
-                input(type="submit", value="search")
+        form(name="searchUser", ng-submit="search(username)")
+            input(type="search", required='', ng-model="username")
+            input(type="submit", value="search")
 
-div
+div.row
     .jumbotron.col-xs-6.pull-left.text-center
-        p {{ error || &quot; &quot; }}
+        p {{ error || "" }}
         h2.text-primary {{user.login}}
         h2 {{user.name}}
         h2.text-muted {{user.location}}

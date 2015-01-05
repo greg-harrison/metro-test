@@ -1,0 +1,12 @@
+div.jumbotron
+    h1 {{title}}
+div
+    form(name="searchUser", ng-submit="selection(lineSearch)")
+        input(type="selection", ng-model="lineSearch")
+        input(type="submit", value="Go")
+    div.col-xs-12.text-right
+        Order: select#repoSort(ng-model='repoSortOrder')
+            option(value='+name') Name Ascending
+            option(value='-name') Name Descending
+            option(value='+stargazers_count') Stars Ascending
+    p {{line}}

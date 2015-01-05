@@ -5,4 +5,15 @@ html(ng-app='metroD3')
         link(rel="stylesheet", href="/vendor/sass-bootstrap/dist/css/bootstrap.min.css")
         include scripts
     body
+        div(ng-controller="NavController")
+            ul.nav.nav-tabs.nav-tabs-justified
+                li(role="presentation" ng-class="{active:isActive('/main')}")
+                    a(href="/") Star Wars API testing
+                li(role="presentation" ng-class="{active:isActive('/githubUser')}")
+                    //Figure out how to only focus on the SUBSTRING URL! IGNORE THE /username PART!
+                    a(href="/githubUser/8bitg") Github User Search
+                li(role="presentation" ng-class="{active:isActive('/metrod3')}")
+                    a(href="/metrod3") Metro D3 Testing
+
         block main-content
+            //This is where each of the views gets loaded into the index.

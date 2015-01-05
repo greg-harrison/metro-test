@@ -1,13 +1,4 @@
 extends ../includes/layout
 
 block main-content
-    section.content
-        div.jumbotron
-            h1 D3 Metro
-
-    ul.nav.nav-tabs.nav-tabs-justified
-        li(role="presentation")
-            a(href="/githubUser/8bitg") Github User Search
-        li(role="presentation")
-            a(href="/") Star Wars API testing
-        div(ng-view)
+    ng-view

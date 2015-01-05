@@ -5,25 +5,9 @@
     var UserController = function($scope, $interval, $location, github, $routeParams) {
 
         // Added COUNTDOWN LOGIC
-        var decrementCountdown = function (){
-            $scope.countdown -= 1;
-            if($scope.countdown < 1){
-                $scope.search($scope.username);
-            }
-        };
-
-        var countdownInterval = null;
-        var startCountdown = function(){
-            countdownInterval = $interval(decrementCountdown, 1000, $scope.countdown);
-        };
-        //using $interval service.
 
         $scope.search = function (username){
-            if(countdownInterval){
-                $interval.cancel(countdownInterval);
-                $scope.countdown = null;
-            }
-            $location.path("/user/" + username);
+            $location.path("/githubUser/" + username);
         };
 
         var onUserComplete = function (data){
@@ -42,8 +26,8 @@
         };
 
         $scope.username = 'angular';
-        $scope.countdown = 5;
-        startCountdown();
+        $scope.userActiveTab = "active";
+        $scope.title = "Github User Search";
         $scope.username = $routeParams.username;
         $scope.repoSortOrder = '-stargazers_count';
         github.getUser($scope.username).then(onUserComplete, onError);
