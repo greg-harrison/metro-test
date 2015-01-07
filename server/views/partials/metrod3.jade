@@ -1,12 +1,28 @@
-div.jumbotron
-    h1 {{title}}
-div
-    form(name="searchUser", ng-submit="selection(lineSearch)")
-        input(type="selection", ng-model="lineSearch")
-        input(type="submit", value="Go")
-    div.col-xs-12.text-right
-        Order: select#repoSort(ng-model='repoSortOrder')
-            option(value='+name') Name Ascending
-            option(value='-name') Name Descending
-            option(value='+stargazers_count') Stars Ascending
-    p {{line}}
+div.row
+    div.jumbotron
+        h1 {{title}}
+div.row
+    div.col-xs-12.text-center
+        form(ng-submit="selection(lineSearch)")
+            select(ng-model="lineSearch")
+                option(ng-repeat="(key, value) in lineColors" value="{{key}}")
+                    {{value}}
+            input(type="submit" value="Submit!")
+    div.lead.col-xs-12.text-center
+        h2 {{displayLine}}
+        div
+            h2 {{stations.length}}
+            p(ng-show="stations.length") results
+    table.col-xs-12.text-center
+        thead
+            tr
+                th.text-center.col-xs-4 City
+                th.text-center.col-xs-4 Code
+                th.text-center.col-xs-4 Name
+        tbody
+            tr(ng-repeat='station in stations')
+                td {{station.Address.City}}
+                td {{station.Code}}
+                td {{station.Name}}
+    div.col-xs-12
+        a(href='/') Back to Search

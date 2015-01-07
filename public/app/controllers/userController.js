@@ -4,8 +4,6 @@
 
     var UserController = function($scope, $interval, $location, github, $routeParams) {
 
-        // Added COUNTDOWN LOGIC
-
         $scope.search = function (username){
             $location.path("/githubUser/" + username);
         };

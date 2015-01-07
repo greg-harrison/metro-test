@@ -1,8 +1,6 @@
 doctype
 html(ng-app='metroD3')
     head
-        link(rel="stylesheet", href="/css/site.css")
-        link(rel="stylesheet", href="/vendor/sass-bootstrap/dist/css/bootstrap.min.css")
         include scripts
     body
         div(ng-controller="NavController")
@@ -10,7 +8,6 @@ html(ng-app='metroD3')
                 li(role="presentation" ng-class="{active:isActive('/main')}")
                     a(href="/") Star Wars API testing
                 li(role="presentation" ng-class="{active:isActive('/githubUser')}")
-                    //Figure out how to only focus on the SUBSTRING URL! IGNORE THE /username PART!
                     a(href="/githubUser/8bitg") Github User Search
                 li(role="presentation" ng-class="{active:isActive('/metrod3')}")
                     a(href="/metrod3") Metro D3 Testing

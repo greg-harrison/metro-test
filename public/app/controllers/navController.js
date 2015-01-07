@@ -4,8 +4,9 @@
 
     var NavController = function($scope, $location) {
         $scope.isActive = function(route) {
-            console.log($location.path().substring(1));
-            return route === $location.path();
+            var string = $location.path().split('/')[1];
+            var brokenString = "/" + string;
+            return route === brokenString;
         };
     };
 

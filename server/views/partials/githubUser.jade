@@ -5,7 +5,6 @@ div
         form(name="searchUser", ng-submit="search(username)")
             input(type="search", required='', ng-model="username")
             input(type="submit", value="search")
-
 div.row
     .jumbotron.col-xs-6.pull-left.text-center
         p {{ error || "" }}
