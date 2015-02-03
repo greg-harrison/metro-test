@@ -1,6 +1,10 @@
 (function(){
 
-    var github = function($http){
+    angular
+        .module('metroD3')
+        .factory('github', github);
+
+    function github($http){
 
         var getUser = function(username){
             return $http.get('https://api.github.com/users/' + username)
@@ -20,10 +24,6 @@
             getUser: getUser,
             getRepos: getRepos
         };
-
-    };
-
-    var module = angular.module("metroD3");
-    module.factory("github", github);
+    }
 
 }());

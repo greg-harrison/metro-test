@@ -1,15 +1,14 @@
 (function(){
+    angular
+        .module('metroD3')
+        .controller('NavController', NavController);
 
-    var app = angular.module("metroD3");
-
-    var NavController = function($scope, $location) {
+    function NavController($scope, $location) {
         $scope.isActive = function(route) {
             var string = $location.path().split('/')[1];
-            var brokenString = "/" + string;
+            var brokenString = '/' + string;
             return route === brokenString;
         };
-    };
-
-    app.controller("NavController", NavController);
+    }
 
 }());

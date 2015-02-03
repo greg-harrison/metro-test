@@ -1,8 +1,32 @@
 @import url(../vendor/sass-bootstrap/dist/css/bootstrap.css);
 
-.active {
-  a {
-    color: green;
-    background-color: #555;
+
+.metro-tabs {
+  line-height: 15px;
+  li {
+    color: black;
+  }
+  li.active > a {
+    color: black;
+    background-color: white;
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+    &:focus {
+      color: black;
+      background-color: white;
+    }
+  }
+}
+
+.jumbotron {
+  background-color: darkslategray;
+  color: lightgray;
+}
+
+@media (min-width: 768px) {
+  #right-col {
+
   }
 }

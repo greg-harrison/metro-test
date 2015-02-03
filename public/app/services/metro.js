@@ -1,23 +1,23 @@
 (function(){
+    angular
+        .module('metroD3')
+        .factory('metro', metro);
 
-    var metro = function($http){
+        function metro($http){
 
-        var apiKey = '2qk7xs42np9szxmnbe4ef2x4';
+            var apiKey = '2qk7xs42np9szxmnbe4ef2x4';
 
-        var getLineStations = function(line){
-            return $http.get('http://api.wmata.com/Rail.svc/json/jStations?LineCode=' + line + '&api_key=' + apiKey)
-                .then(function(response){
-                    return response.data.Stations;
-            });
-        };
+            var getLineStations = function(line){
+                return $http.get('http://api.wmata.com/Rail.svc/json/jStations?LineCode=' + line + '&api_key=' + apiKey)
+                    .then(function(response){
+                        return response.data.Stations;
+                });
+            };
 
-        return {
-            getLineStations: getLineStations
-        };
+            return {
+                getLineStations: getLineStations
+            };
 
-    };
-
-    var module = angular.module("metroD3");
-    module.factory("metro", metro);
+        }
 
 }());

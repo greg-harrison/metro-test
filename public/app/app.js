@@ -1,28 +1,33 @@
 (function(){
-    var app = angular.module("metroD3", ['ngResource', 'ngRoute']);
+    angular
+        .module('metroD3', ['ngResource', 'ngRoute'])
+        .config(config);
 
+        function config($routeProvider, $locationProvider){
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
 
-    app.config(function($routeProvider, $locationProvider){
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
-        $routeProvider
-            .when("/main", {
-                templateUrl: "/partials/main",
-                controller: "MainController"
-            })
-            .when("/githubUser/:username", {
-                templateUrl: "/partials/githubUser",
-                controller: "UserController"
-            })
-            .when("/metrod3", {
-                templateUrl: "/partials/metrod3",
-                controller: "MetroController"
-            })
-            .otherwise({
-                redirectTo: "/main"
-            })
-    });
+            //TODO refactor the Front End code for this app, NO MORE PARTIALS.
+            //TODO Use directives!
+
+            $routeProvider
+                .when('/main', {
+                    templateUrl: '/partials/main',
+                    controller: 'MainController'
+                })
+                .when('/githubUser/:username', {
+                    templateUrl: '/partials/githubUser',
+                    controller: 'UserController'
+                })
+                .when('/metrod3', {
+                    templateUrl: '/partials/metrod3',
+                    controller: 'MetroController'
+                })
+                .otherwise({
+                    redirectTo: '/main'
+                })
+        }
 }());
 

@@ -4,13 +4,13 @@ html(ng-app='metroD3')
         include scripts
     body
         div(ng-controller="NavController")
-            ul.nav.nav-tabs.nav-tabs-justified
+            ul.nav.nav-pills.nav-pills-justified.metro-tabs
                 li(role="presentation" ng-class="{active:isActive('/main')}")
-                    a(href="/") Star Wars API testing
+                    a(href="/") {{isSelected}} Star Wars API testing
                 li(role="presentation" ng-class="{active:isActive('/githubUser')}")
-                    a(href="/githubUser/8bitg") Github User Search
+                    a(href="/githubUser/8bitg") {{isSelected}} Github User Search
                 li(role="presentation" ng-class="{active:isActive('/metrod3')}")
-                    a(href="/metrod3") Metro D3 Testing
+                    a(href="/metrod3") {{isSelected}} Metro API Testing
 
         block main-content
             //This is where each of the views gets loaded into the index.

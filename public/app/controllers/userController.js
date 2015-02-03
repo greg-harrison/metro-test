@@ -1,11 +1,13 @@
 (function(){
 
-    var app = angular.module("metroD3");
+    angular
+        .module('metroD3')
+        .controller('UserController', UserController);
 
-    var UserController = function($scope, $interval, $location, github, $routeParams) {
+        function UserController($scope, $interval, $location, github, $routeParams) {
 
         $scope.search = function (username){
-            $location.path("/githubUser/" + username);
+            $location.path('/githubUser/' + username);
         };
 
         var onUserComplete = function (data){
@@ -20,18 +22,17 @@
         };
 
         var onError = function (reason){
-            $scope.error = "Could not fetch data" + reason;
+            $scope.error = 'Could not fetch data' + reason;
         };
 
         $scope.username = 'angular';
-        $scope.userActiveTab = "active";
-        $scope.title = "Github User Search";
+        $scope.userActiveTab = 'active';
+        $scope.isSelected = '-';
+        $scope.title = 'Github User Search';
         $scope.username = $routeParams.username;
         $scope.repoSortOrder = '-stargazers_count';
         github.getUser($scope.username).then(onUserComplete, onError);
 
-    };
-
-    app.controller("UserController", UserController);
+    }
 
 }());

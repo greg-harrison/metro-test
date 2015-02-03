@@ -1,12 +1,13 @@
 (function(){
-    var app = angular.module("metroD3");
+    angular
+        .module('metroD3')
+        .controller('MainController', MainController);
 
-    var MainController = function($scope) {
-        $scope.title = "Main Controller Active";
-        $scope.mainActiveTab = "active";
-        $scope.notExploding = "HEY! It's not exploding!";
-    };
-
-    app.controller("MainController", MainController);
+    function MainController($scope) {
+        $scope.title = 'Star Wars API';
+        $scope.mainActiveTab = 'active';
+        $scope.notExploding = "HELLO! It's not exploding!";
+        $scope.isSelected = '-';
+    }
 
 }());
