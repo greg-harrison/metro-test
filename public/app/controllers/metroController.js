@@ -14,14 +14,23 @@
             $scope.error = 'Could not fetch data' + reason;
         };
 
-        $scope.selection = function (lineSearch) {
-            $scope.line = lineSearch;
-            metro.getLineStations($scope.line).then(onLines, onError);
+        $scope.lineColors = [{short: 'RD', long: 'Red Line', color: '#FF0000'},
+                             {short: 'BL', long: 'Blue Line', color: '#0080FF'},
+                             {short: 'GR', long: 'Green Line', color: '#2EFE9A'},
+                             {short: 'SV', long: 'Silver Line', color: '#E6E6E6'},
+                             {short: 'YL', long: 'Yellow Line', color: '#F2F5A9'},
+                             {short: 'OR', long: 'Orange Line', color: '#F7BE81'}];
+
+        $scope.selectedColor = $scope.lineColors[1];
+
+        $scope.$watch('selectedColor', function (selectedColor) {
+            $scope.line = $scope.selectedColor.long;
+            $scope.titleColor = $scope.selectedColor.color;
+
+            metro.getLineStations($scope.selectedColor).then(onLines, onError);
             //Want to update the COLOR OF THE TEXT based on the SELECTED LINE!
-        };
 
-        $scope.lineColors = {'RD': 'Red Line', 'BL': 'Blue Line', 'GR': 'Green Line', 'SV': 'Silver Line', 'YL': 'Yellow Line', 'OR': 'Orange Line'};
-
+        });
 
         $scope.metroActiveTab = 'active';
         $scope.isSelected = '-';
