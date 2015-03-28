@@ -12,3 +12,5 @@
     }
 
 }());
+
+//Todo: Convert this Navbar Controller into a Directive!

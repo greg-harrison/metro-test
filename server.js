@@ -44,6 +44,7 @@ app.all('*', function(req, res,next) {
 
 // Routing
 
+// Todo: Remove Partials!
 app.get('/partials/:partialPath', function(req, res){
     res.render('partials/' + req.params.partialPath);
 });
