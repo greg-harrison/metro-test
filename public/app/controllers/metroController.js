@@ -16,10 +16,10 @@
 
         $scope.lineColors = [{short: 'RD', long: 'Red Line', color: '#FF0000'},
                              {short: 'BL', long: 'Blue Line', color: '#0080FF'},
-                             {short: 'GR', long: 'Green Line', color: '#2EFE9A'},
-                             {short: 'SV', long: 'Silver Line', color: '#E6E6E6'},
-                             {short: 'YL', long: 'Yellow Line', color: '#F2F5A9'},
-                             {short: 'OR', long: 'Orange Line', color: '#F7BE81'}];
+                             {short: 'GR', long: 'Green Line', color: '#42BA80'},
+                             {short: 'SV', long: 'Silver Line', color: '#C8C7C7'},
+                             {short: 'YL', long: 'Yellow Line', color: '#DDE25C'},
+                             {short: 'OR', long: 'Orange Line', color: '#FF8400'}];
 
         $scope.selectedColor = $scope.lineColors[1];
 
