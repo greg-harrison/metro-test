@@ -1,6 +1,6 @@
 (function(){
     angular
-        .module('metroD3', ['ngResource', 'ngRoute'])
+        .module('metroD3', ['ngRe   source', 'ngRoute'])
         .config(config);
 
         function config($routeProvider, $locationProvider){
