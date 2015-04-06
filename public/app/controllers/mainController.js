@@ -1,7 +1,7 @@
 (function(){
     angular
         .module('metroD3')
-        .controller('MainController', MainController);
+        .controller('mainController', MainController);
 
     function MainController($scope) {
         $scope.title = 'Star Wars API';

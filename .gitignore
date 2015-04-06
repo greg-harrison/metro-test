@@ -4,4 +4,6 @@ node_modules/
 
 public/vendor/
 
+config.js
+
 atlassian-ide-plugin.xml

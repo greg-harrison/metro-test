@@ -14,15 +14,16 @@
 
             $routeProvider
                 .when('/main', {
-                    templateUrl: '/partials/main',
-                    controller: 'MainController'
+                    templateUrl: 'app/partials/main',
+                    controller: 'mainController',
+                    controllerAs: 'main'
                 })
                 .when('/githubUser/:username', {
-                    templateUrl: '/partials/githubUser',
+                    templateUrl: 'app/partials/githubUser',
                     controller: 'UserController'
                 })
                 .when('/metrod3', {
-                    templateUrl: '/partials/metrod3',
+                    templateUrl: 'app/partials/metrod3',
                     controller: 'MetroController'
                 })
                 .otherwise({
